@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SOLV — Wellness patches designed for travel</title>
+  <title>SOLV — Wellness strips designed for travel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -139,11 +139,11 @@
 
     /* ── HERO PRODUCT CARDS (fan layout) ── */
     .hero-right {
-      display: flex; align-items: center; justify-content: center;
+      display: flex; align-items: center; justify-content: flex-end; padding-right:20px;
     }
     .hero-cards {
       display: flex; align-items: flex-end; justify-content: center;
-      padding: 52px 0 36px;
+      padding: 52px 0 36px 0px;
     }
     .hpc {
       width: 341px; height: 510px;
@@ -275,11 +275,11 @@
     .sleep  .tin { background: linear-gradient(155deg, #5c1a30, #2a0c19); border: 1px solid rgba(212,82,110,.25); }
     .circ   .tin { background: linear-gradient(155deg, #243f10, #101d07); border: 1px solid rgba(141,196,64,.25); }
     .energy .tin { background: linear-gradient(155deg, #1a2f5a, #090f22); border: 1px solid rgba(80,128,212,.25); }
-    .tin-patches { position: absolute; top: 26px; display: flex; flex-direction: column; gap: 7px; }
-    .tin-patch { width: 68px; height: 24px; border-radius: 100px; }
-    .sleep  .tin-patch { background: rgba(212,82,110,.45); border: 1px solid rgba(212,82,110,.6); }
-    .circ   .tin-patch { background: rgba(141,196,64,.45); border: 1px solid rgba(141,196,64,.6); }
-    .energy .tin-patch { background: rgba(80,128,212,.45); border: 1px solid rgba(80,128,212,.6); }
+    .tin-strips { position: absolute; top: 26px; display: flex; flex-direction: column; gap: 7px; }
+    .tin-strip { width: 68px; height: 24px; border-radius: 100px; }
+    .sleep  .tin-strip { background: rgba(212,82,110,.45); border: 1px solid rgba(212,82,110,.6); }
+    .circ   .tin-strip { background: rgba(141,196,64,.45); border: 1px solid rgba(141,196,64,.6); }
+    .energy .tin-strip { background: rgba(80,128,212,.45); border: 1px solid rgba(80,128,212,.6); }
     .tin-logo {
       font-family: 'Nunito', sans-serif;
       font-weight: 900; font-size: 34px; letter-spacing: -1px; line-height: 1;
@@ -583,7 +583,7 @@
       .nav-links { gap: 18px; }
       .hero { grid-template-columns: 1fr; padding: 110px 24px 70px; text-align: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: center; }
+      .hero-actions { justify-content: flex-end; }
       .hero-right { order: -1; margin-top: 20px; }
       .stats { padding: 24px; }
       .stat-divider { display: none; }
@@ -751,7 +751,7 @@
         Melt-in-your-mouth wellness for travel
       </div>
       <h1 class="hero-title">Flying should not<br>cost you your<br><em>well-being.</em></h1>
-      <p class="hero-sub">SOLV is the first dissolvable wellness patch designed specifically for air travel. Science-backed. No pills, no water. Just place it on your tongue and let it work.</p>
+      <p class="hero-sub">SOLV is the first dissolvable wellness strip designed specifically for air travel. Science-backed. No pills, no water. Just place it on your tongue and let it work.</p>
       <div class="hero-actions">
         <a href="#shop" class="btn-primary">Shop Now — from €19.99</a>
         <a href="#how" class="btn-ghost">See how it works
@@ -808,7 +808,7 @@
   <section class="how" id="how">
     <span class="section-tag">The ritual</span>
     <h2 class="section-title">Simple by design.<br>Effective by science.</h2>
-    <p class="section-sub">No pills. No water. No effort. Our melt-in-your-mouth patches deliver what your body needs, right at your seat.</p>
+    <p class="section-sub">No pills. No water. No effort. Our melt-in-your-mouth strips deliver what your body needs, right at your seat.</p>
     <div class="steps">
 
       <div class="step step-1">
@@ -834,7 +834,7 @@
           </svg>
         </div>
         <div class="step-title">Place on your tongue</div>
-        <p class="step-desc">One patch. It dissolves in seconds — no water, no pill-swallowing, no mess. Use it at your seat, in the lounge, or at the gate.</p>
+        <p class="step-desc">One strip. It dissolves in seconds — no water, no pill-swallowing, no mess. Use it at your seat, in the lounge, or at the gate.</p>
       </div>
 
       <div class="step step-3">
@@ -859,7 +859,7 @@
         <span class="section-tag">Shop</span>
         <h2 class="section-title">Choose your formula</h2>
       </div>
-      <p class="shop-note">Each tin contains 10 dissolvable patches. Carry-on friendly. No prescription needed. Ships worldwide.</p>
+      <p class="shop-note">Each tin contains 10 dissolvable strips. Carry-on friendly. No prescription needed. Ships worldwide.</p>
     </div>
 
     <div class="products-grid">
@@ -887,8 +887,8 @@
             <text x="70" y="142" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="rgba(212,82,110,0.9)">SLEEP</text>
             <line x1="44" y1="150" x2="96" y2="150" stroke="rgba(212,82,110,0.18)" stroke-width="0.6"/>
             <text x="70" y="163" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">MELT-IN-YOUR-MOUTH</text>
-            <text x="70" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">WELLNESS PATCH</text>
-            <text x="70" y="192" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5.5" font-weight="500" letter-spacing="0.8" fill="rgba(246,241,234,0.28)">10 PATCHES · DIETARY SUPPLEMENT</text>
+            <text x="70" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">WELLNESS STRIP</text>
+            <text x="70" y="192" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5.5" font-weight="500" letter-spacing="0.8" fill="rgba(246,241,234,0.28)">10 STRIPS · DIETARY SUPPLEMENT</text>
           </svg>
         </div>
         <div class="product-info">
@@ -902,7 +902,7 @@
             <span class="ing-tag">Valerian Root</span>
           </div>
           <div class="product-buy">
-            <div class="product-price">€19.99 <small>/ 10 patches</small></div>
+            <div class="product-price">€19.99 <small>/ 10 strips</small></div>
             <button class="btn-add" onclick="openModal('Sleep — Rest Formula')">Add to cart</button>
           </div>
         </div>
@@ -928,8 +928,8 @@
             <text x="70" y="142" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="rgba(141,196,64,0.9)">CIRCULATION</text>
             <line x1="44" y1="150" x2="96" y2="150" stroke="rgba(141,196,64,0.18)" stroke-width="0.6"/>
             <text x="70" y="163" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">MELT-IN-YOUR-MOUTH</text>
-            <text x="70" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">WELLNESS PATCH</text>
-            <text x="70" y="192" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5.5" font-weight="500" letter-spacing="0.8" fill="rgba(246,241,234,0.28)">10 PATCHES · DIETARY SUPPLEMENT</text>
+            <text x="70" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">WELLNESS STRIP</text>
+            <text x="70" y="192" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5.5" font-weight="500" letter-spacing="0.8" fill="rgba(246,241,234,0.28)">10 STRIPS · DIETARY SUPPLEMENT</text>
           </svg>
         </div>
         <div class="product-info">
@@ -943,7 +943,7 @@
             <span class="ing-tag">CoQ10</span>
           </div>
           <div class="product-buy">
-            <div class="product-price">€19.99 <small>/ 10 patches</small></div>
+            <div class="product-price">€19.99 <small>/ 10 strips</small></div>
             <button class="btn-add" onclick="openModal('Circulation — Flow Formula')">Add to cart</button>
           </div>
         </div>
@@ -969,8 +969,8 @@
             <text x="70" y="142" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" font-weight="700" letter-spacing="3" fill="rgba(80,128,212,0.9)">ENERGY</text>
             <line x1="44" y1="150" x2="96" y2="150" stroke="rgba(80,128,212,0.18)" stroke-width="0.6"/>
             <text x="70" y="163" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">MELT-IN-YOUR-MOUTH</text>
-            <text x="70" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">WELLNESS PATCH</text>
-            <text x="70" y="192" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5.5" font-weight="500" letter-spacing="0.8" fill="rgba(246,241,234,0.28)">10 PATCHES · DIETARY SUPPLEMENT</text>
+            <text x="70" y="174" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="rgba(246,241,234,0.48)">WELLNESS STRIP</text>
+            <text x="70" y="192" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="5.5" font-weight="500" letter-spacing="0.8" fill="rgba(246,241,234,0.28)">10 STRIPS · DIETARY SUPPLEMENT</text>
           </svg>
         </div>
         <div class="product-info">
@@ -984,7 +984,7 @@
             <span class="ing-tag">Vitamin C</span>
           </div>
           <div class="product-buy">
-            <div class="product-price">€19.99 <small>/ 10 patches</small></div>
+            <div class="product-price">€19.99 <small>/ 10 strips</small></div>
             <button class="btn-add" onclick="openModal('Energy — Boost Formula')">Add to cart</button>
           </div>
         </div>
@@ -997,7 +997,7 @@
       <div>
         <div class="bundle-tag">Best Value</div>
         <div class="bundle-title">Formula Bundle</div>
-        <p class="bundle-sub">All three formulas. 30 patches total.<br>One complete travel wellness kit.</p>
+        <p class="bundle-sub">All three formulas. 30 strips total.<br>One complete travel wellness kit.</p>
       </div>
       <div class="bundle-tins">
         <div class="mini-tin"><span class="mini-logo">solv</span></div>
@@ -1008,7 +1008,7 @@
         <div class="bundle-pricing">
           <div class="bundle-was">€59.97</div>
           <div class="bundle-price">€49.99</div>
-          <div class="bundle-per">30 patches · save €10</div>
+          <div class="bundle-per">30 strips · save €10</div>
         </div>
         <button class="btn-bundle" onclick="openModal('Formula Bundle')">Get the Bundle</button>
       </div>
@@ -1072,7 +1072,7 @@
           </svg>
         </div>
         <div class="b2b-perk-title">Wholesale Tins</div>
-        <p class="b2b-perk-desc">Individual tins of 10 patches, ready to stock on shelves or at gates. Minimum orders available.</p>
+        <p class="b2b-perk-desc">Individual tins of 10 strips, ready to stock on shelves or at gates. Minimum orders available.</p>
       </div>
       <div class="b2b-perk">
         <div class="b2b-perk-icon">
