@@ -143,81 +143,25 @@
     }
     .hero-cards {
       display: flex; align-items: flex-end; justify-content: center;
-      padding: 48px 20px 32px;
+      padding: 52px 0 36px;
     }
     .hpc {
-      width: 152px; height: 228px;
-      border-radius: 32px;
+      width: 341px; height: 510px;
+      border-radius: 24px;
+      overflow: hidden;
       position: relative;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: flex-end;
-      padding-bottom: 22px;
+      display: block;
       text-decoration: none; cursor: pointer;
-      box-shadow: 0 22px 64px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.07);
-      transition: transform .4s cubic-bezier(.34,1.56,.64,1), box-shadow .35s;
+      transition: transform .4s cubic-bezier(.34,1.56,.64,1);
     }
+    .hpc img { width: 100%; height: 100%; object-fit: contain; display: block; }
     .hpc:focus-visible { outline: 2px solid var(--sleep); outline-offset: 4px; }
-    .hpc-s {
-      background: linear-gradient(155deg, #5c1a30, #2a0c19);
-      border: 1px solid rgba(212,82,110,.3);
-      transform: rotate(-9deg) translateY(20px);
-      z-index: 1; margin-right: -22px;
-    }
-    .hpc-c {
-      background: linear-gradient(155deg, #243f10, #101d07);
-      border: 1px solid rgba(141,196,64,.3);
-      transform: rotate(0deg) translateY(0);
-      z-index: 3;
-    }
-    .hpc-e {
-      background: linear-gradient(155deg, #1a2f5a, #090f22);
-      border: 1px solid rgba(80,128,212,.3);
-      transform: rotate(9deg) translateY(20px);
-      z-index: 2; margin-left: -22px;
-    }
-    .hpc-s:hover { transform: rotate(-4deg) translateY(-14px); box-shadow: 0 36px 80px rgba(0,0,0,.7); }
-    .hpc-c:hover { transform: rotate(0deg) translateY(-20px); box-shadow: 0 40px 90px rgba(0,0,0,.7); }
-    .hpc-e:hover { transform: rotate(4deg) translateY(-14px); box-shadow: 0 36px 80px rgba(0,0,0,.7); }
-
-    .hpc-patches {
-      position: absolute; top: 28px;
-      display: flex; flex-direction: column; gap: 7px;
-    }
-    .hpc-patch { width: 84px; height: 28px; border-radius: 100px; }
-    .hpc-s .hpc-patch { background: rgba(212,82,110,.4); border: 1px solid rgba(212,82,110,.58); }
-    .hpc-c .hpc-patch { background: rgba(141,196,64,.4); border: 1px solid rgba(141,196,64,.58); }
-    .hpc-e .hpc-patch { background: rgba(80,128,212,.4); border: 1px solid rgba(80,128,212,.58); }
-
-    .hpc-variant {
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; margin-bottom: 6px;
-      display: block; opacity: .7;
-    }
-    .hpc-s .hpc-variant { color: #e2607c; }
-    .hpc-c .hpc-variant { color: #8dc440; }
-    .hpc-e .hpc-variant { color: #5a8fd9; }
-
-    .hpc-logo {
-      font-family: 'Nunito', sans-serif;
-      font-weight: 900; font-size: 36px; letter-spacing: -1.5px; line-height: 1;
-    }
-    .hpc-s .hpc-logo { color: #e2607c; }
-    .hpc-c .hpc-logo { color: #8dc440; }
-    .hpc-e .hpc-logo { color: #5a8fd9; }
-
-    /* Discover arrow, appears on hover */
-    .hpc-arrow {
-      position: absolute; bottom: -32px; left: 50%;
-      transform: translateX(-50%);
-      font-size: 11px; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase;
-      opacity: 0; transition: opacity .3s;
-      white-space: nowrap;
-    }
-    .hpc-s .hpc-arrow { color: rgba(212,82,110,.7); }
-    .hpc-c .hpc-arrow { color: rgba(141,196,64,.7); }
-    .hpc-e .hpc-arrow { color: rgba(80,128,212,.7); }
-    .hpc:hover .hpc-arrow { opacity: 1; }
+    .hpc-s { transform: rotate(-9deg) translateY(45px); z-index: 1; margin-right: -112px; }
+    .hpc-c { transform: rotate(0deg)  translateY(0);    z-index: 3; }
+    .hpc-e { transform: rotate(9deg)  translateY(45px); z-index: 2; margin-left: -112px; }
+    .hpc-s:hover { transform: rotate(-4deg) translateY(-32px); }
+    .hpc-c:hover { transform: rotate(0deg)  translateY(-45px); }
+    .hpc-e:hover { transform: rotate(4deg)  translateY(-32px); }
 
     /* ── STATS BAR ── */
     .stats {
@@ -664,11 +608,9 @@
       .nav-links a:not(.nav-cta) { display: none; }
       .hero-title { font-size: 38px; }
       .bundle-title { font-size: 34px; }
-      .hpc { width: 126px; height: 192px; }
-      .hpc-patch { width: 70px; height: 23px; }
-      .hpc-logo { font-size: 30px; }
-      .hpc-s { transform: rotate(-9deg) translateY(16px); margin-right: -16px; }
-      .hpc-e { transform: rotate(9deg) translateY(16px); margin-left: -16px; }
+      .hpc { width: 282px; height: 422px; }
+      .hpc-s { transform: rotate(-9deg) translateY(35px); margin-right: -93px; }
+      .hpc-e { transform: rotate(9deg)  translateY(35px); margin-left:  -93px; }
     }
   </style>
 </head>
@@ -822,37 +764,16 @@
     <div class="hero-right">
       <div class="hero-cards">
 
-        <a href="#sleep" class="hpc hpc-s">
-          <div class="hpc-patches">
-            <div class="hpc-patch"></div>
-            <div class="hpc-patch"></div>
-            <div class="hpc-patch"></div>
-          </div>
-          <span class="hpc-variant">Sleep</span>
-          <span class="hpc-logo">solv</span>
-          <span class="hpc-arrow">Explore &darr;</span>
+        <a href="#sleep" class="hpc hpc-s" aria-label="Shop Sleep formula">
+          <img src="assets/sleep.png" alt="SOLV Sleep tin">
         </a>
 
-        <a href="#circ" class="hpc hpc-c">
-          <div class="hpc-patches">
-            <div class="hpc-patch"></div>
-            <div class="hpc-patch"></div>
-            <div class="hpc-patch"></div>
-          </div>
-          <span class="hpc-variant">Circulation</span>
-          <span class="hpc-logo">solv</span>
-          <span class="hpc-arrow">Explore &darr;</span>
+        <a href="#circ" class="hpc hpc-c" aria-label="Shop Circulation formula">
+          <img src="assets/circulation.png" alt="SOLV Circulation tin">
         </a>
 
-        <a href="#energy" class="hpc hpc-e">
-          <div class="hpc-patches">
-            <div class="hpc-patch"></div>
-            <div class="hpc-patch"></div>
-            <div class="hpc-patch"></div>
-          </div>
-          <span class="hpc-variant">Energy</span>
-          <span class="hpc-logo">solv</span>
-          <span class="hpc-arrow">Explore &darr;</span>
+        <a href="#energy" class="hpc hpc-e" aria-label="Shop Energy formula">
+          <img src="assets/energy.png" alt="SOLV Energy tin">
         </a>
 
       </div>
