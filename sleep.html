@@ -11,9 +11,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --accent:  #e8507a;
-      --dark:    #3d0a14;
-      --bg:      #2d0d1a;
+      --accent:  #8dc440;
+      --dark:    #2d3d1a;
+      --bg:      #1a2610;
       --cream:   #f6f1ea;
       --beige:   #f5f0eb;
       --on-dark: rgba(246,241,234,.85);
@@ -28,7 +28,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 60px;
-      background: rgba(45,13,26,.94);
+      background: rgba(26,38,16,.94);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(255,255,255,.06);
     }
@@ -69,64 +69,64 @@
     .hero-card {
       background: var(--beige);
       border-radius: 24px; padding: 40px; margin: 40px;
-      color: #2d0f1b; max-width: 460px; width: 100%;
+      color: #2d3d1a; max-width: 460px; width: 100%;
     }
     .hero-badge {
-      display: inline-block; background: var(--accent); color: #fff;
+      display: inline-block; background: var(--accent); color: var(--dark);
       font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
       padding: 5px 14px; border-radius: 100px; margin-bottom: 20px;
     }
     .hero-title {
       font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 30px; line-height: 1.2;
-      color: #2d0f1b; margin-bottom: 12px;
+      color: #2d3d1a; margin-bottom: 12px;
     }
     .hero-sub {
-      font-size: 15px; line-height: 1.65; color: rgba(45,15,27,.6); margin-bottom: 24px;
+      font-size: 15px; line-height: 1.65; color: rgba(45,61,26,.6); margin-bottom: 24px;
     }
     .price-row {
       display: flex; align-items: baseline; gap: 8px; margin-bottom: 24px;
     }
     .price-main {
-      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 36px; color: #2d0f1b;
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 36px; color: #2d3d1a;
     }
-    .price-sub { font-size: 14px; color: rgba(45,15,27,.5); }
+    .price-sub { font-size: 14px; color: rgba(45,61,26,.5); }
 
     .qty-row { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
-    .qty-label { font-size: 13px; font-weight: 600; color: rgba(45,15,27,.6); }
+    .qty-label { font-size: 13px; font-weight: 600; color: rgba(45,61,26,.6); }
     .qty-ctrl {
       display: flex; align-items: center;
-      border: 1.5px solid rgba(45,15,27,.18); border-radius: 100px;
+      border: 1.5px solid rgba(45,61,26,.18); border-radius: 100px;
     }
     .qty-btn {
       background: none; border: none; cursor: pointer;
-      width: 36px; height: 36px; font-size: 18px; color: #2d0f1b;
+      width: 36px; height: 36px; font-size: 18px; color: #2d3d1a;
       display: flex; align-items: center; justify-content: center; transition: background .15s;
     }
     .qty-btn:first-child { border-radius: 100px 0 0 100px; }
     .qty-btn:last-child  { border-radius: 0 100px 100px 0; }
-    .qty-btn:hover { background: rgba(45,15,27,.08); }
-    .qty-num { width: 36px; text-align: center; font-size: 15px; font-weight: 700; color: #2d0f1b; }
+    .qty-btn:hover { background: rgba(45,61,26,.08); }
+    .qty-num { width: 36px; text-align: center; font-size: 15px; font-weight: 700; color: #2d3d1a; }
 
     .btn-atc {
-      width: 100%; padding: 16px; background: var(--accent); color: #fff;
+      width: 100%; padding: 16px; background: var(--accent); color: var(--dark);
       border: none; border-radius: 100px;
       font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700;
       cursor: pointer; margin-bottom: 10px; transition: transform .2s, box-shadow .2s;
     }
-    .btn-atc:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(232,80,122,.4); }
+    .btn-atc:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(141,196,64,.4); }
 
     .btn-bundle {
       display: block; width: 100%; padding: 14px; text-align: center;
-      background: transparent; color: #2d0f1b;
-      border: 1.5px solid rgba(45,15,27,.2); border-radius: 100px;
+      background: transparent; color: #2d3d1a;
+      border: 1.5px solid rgba(45,61,26,.2); border-radius: 100px;
       font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
       cursor: pointer; text-decoration: none; transition: border-color .2s, color .2s;
       margin-bottom: 24px;
     }
     .btn-bundle:hover { border-color: var(--accent); color: var(--accent); }
 
-    .perks { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(45,15,27,.1); padding-top: 20px; }
-    .perk { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(45,15,27,.65); font-weight: 500; }
+    .perks { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(45,61,26,.1); padding-top: 20px; }
+    .perk { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(45,61,26,.65); font-weight: 500; }
     .perk svg { flex-shrink: 0; }
 
     /* ── STATS BAR ── */
@@ -161,12 +161,12 @@
     .step { display: flex; flex-direction: column; gap: 14px; }
     .step-num {
       width: 48px; height: 48px; border-radius: 50%;
-      background: var(--accent); color: #fff;
+      background: var(--accent); color: var(--dark);
       font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 20px;
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .step-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 20px; color: var(--dark); }
-    .step-desc { font-size: 15px; line-height: 1.65; color: rgba(45,15,27,.6); }
+    .step-desc { font-size: 15px; line-height: 1.65; color: rgba(45,61,26,.6); }
 
     /* ── INGREDIENTS ── */
     .ingredients { background: var(--bg); padding: 100px 60px; }
@@ -180,7 +180,7 @@
     }
     .ing-icon {
       width: 44px; height: 44px; border-radius: 12px;
-      background: rgba(232,80,122,.15);
+      background: rgba(141,196,64,.15);
       display: flex; align-items: center; justify-content: center; font-size: 22px;
     }
     .ing-name { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; color: var(--cream); }
@@ -222,7 +222,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #1a060f; padding: 36px 60px; text-align: center;
+      background: #0f1a09; padding: 36px 60px; text-align: center;
       font-size: 13px; color: rgba(246,241,234,.3);
     }
     footer a { color: rgba(246,241,234,.5); text-decoration: none; }
@@ -247,24 +247,24 @@
     .modal-close {
       position: absolute; top: 16px; right: 20px;
       background: none; border: none; font-size: 24px; cursor: pointer;
-      color: rgba(45,15,27,.3); line-height: 1; transition: color .2s;
+      color: rgba(45,61,26,.3); line-height: 1; transition: color .2s;
     }
-    .modal-close:hover { color: rgba(45,15,27,.75); }
+    .modal-close:hover { color: rgba(45,61,26,.75); }
     .modal-title {
       font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 24px;
-      color: #2d0f1b; margin-bottom: 10px; letter-spacing: -.5px;
+      color: #2d3d1a; margin-bottom: 10px; letter-spacing: -.5px;
     }
-    .modal-sub { font-size: 14px; color: rgba(45,15,27,.6); line-height: 1.6; margin-bottom: 24px; }
+    .modal-sub { font-size: 14px; color: rgba(45,61,26,.6); line-height: 1.6; margin-bottom: 24px; }
     .modal-input {
       width: 100%; padding: 14px 20px; border-radius: 100px;
-      border: 1.5px solid rgba(45,15,27,.12);
+      border: 1.5px solid rgba(45,61,26,.12);
       font-size: 14px; font-family: 'DM Sans', sans-serif;
       outline: none; margin-bottom: 10px;
-      background: #fff; color: #2d0f1b; transition: border-color .2s;
+      background: #fff; color: #2d3d1a; transition: border-color .2s;
     }
     .modal-input:focus { border-color: var(--accent); }
     .modal-btn {
-      width: 100%; background: var(--accent); color: #fff;
+      width: 100%; background: var(--accent); color: var(--dark);
       padding: 15px; border-radius: 100px; border: none;
       font-size: 15px; font-weight: 700; cursor: pointer;
       font-family: 'DM Sans', sans-serif; transition: transform .2s, box-shadow .2s;
@@ -473,20 +473,20 @@
       <span class="section-tag">Also from SOLV</span>
       <h2 class="section-title">You may also like.</h2>
       <div class="also-grid">
-        <a href="circulation.html" class="also-card">
-          <div class="also-img" style="background: #3d4a1e;">
-            <img src="assets/circulation.png" alt="SOLV Circulation tin">
+        <a href="hydration.html" class="also-card">
+          <div class="also-img" style="background: #0d2a3d;">
+            <img src="assets/circulation.png" alt="SOLV Hydration tin">
           </div>
-          <div class="also-info" style="background: #2a3314;">
-            <div class="also-name">Circulation</div>
-            <p class="also-sub">Keep the blood moving. Beat the bloat.</p>
+          <div class="also-info" style="background: #071e2a;">
+            <div class="also-name">Hydration</div>
+            <p class="also-sub">Beat dehydration before it beats you.</p>
           </div>
         </a>
         <a href="energy.html" class="also-card">
-          <div class="also-img" style="background: #1a2440;">
+          <div class="also-img" style="background: #2d0d1a;">
             <img src="assets/energy.png" alt="SOLV Energy tin">
           </div>
-          <div class="also-info" style="background: #111830;">
+          <div class="also-info" style="background: #1a060f;">
             <div class="also-name">Energy</div>
             <p class="also-sub">Arrive switched on. Sharp focus. Zero crash.</p>
           </div>

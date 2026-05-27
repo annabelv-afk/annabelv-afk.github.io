@@ -15,12 +15,12 @@
       --cream:     #f6f1ea;
       --dark:      #2d0f1b;
       --maroon:    #4a1628;
-      --sleep:     #d4526e;
-      --sleep-bg:  #3a1020;
-      --circ:      #8dc440;
-      --circ-bg:   #192f0c;
+      --sleep:     #e8507a;
+      --sleep-bg:  #2d3d1a;
+      --circ:      #4a9eca;
+      --circ-bg:   #0d2a3d;
       --energy:    #5080d4;
-      --energy-bg: #0e1d3a;
+      --energy-bg: #3d0a14;
     }
 
     html { scroll-behavior: smooth; }
@@ -60,7 +60,7 @@
       padding: 10px 24px !important; border-radius: 100px;
       font-weight: 700 !important; transition: box-shadow .2s, transform .2s !important;
     }
-    .nav-cta:hover { box-shadow: 0 8px 28px rgba(212,82,110,.45); transform: translateY(-1px); }
+    .nav-cta:hover { box-shadow: 0 8px 28px rgba(232,80,122,.45); transform: translateY(-1px); }
 
     /* ── HERO ── */
     .hero {
@@ -79,7 +79,7 @@
       content: '';
       position: absolute; top: -200px; right: -200px;
       width: 600px; height: 600px;
-      background: radial-gradient(circle, rgba(212,82,110,.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,80,122,.1) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero::after {
@@ -130,7 +130,7 @@
       text-decoration: none; display: inline-block;
       transition: transform .2s, box-shadow .2s;
     }
-    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(212,82,110,.42); }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 44px rgba(232,80,122,.42); }
     .btn-ghost {
       color: rgba(246,241,234,.65); font-size: 15px; font-weight: 500;
       text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color .2s;
@@ -224,8 +224,8 @@
       margin-bottom: 20px;
     }
     .step-icon svg { width: 22px; height: 22px; }
-    .step-1 .step-icon { background: rgba(212,82,110,.12); color: var(--sleep); }
-    .step-2 .step-icon { background: rgba(141,196,64,.12); color: var(--circ); }
+    .step-1 .step-icon { background: rgba(232,80,122,.12); color: var(--sleep); }
+    .step-2 .step-icon { background: rgba(74,158,202,.12); color: var(--circ); }
     .step-3 .step-icon { background: rgba(80,128,212,.12); color: var(--energy); }
 
     .step-title {
@@ -266,7 +266,7 @@
     .sleep  .product-visual { background: var(--sleep-bg); }
     .circ   .product-visual { background: var(--circ-bg); }
     .energy .product-visual { background: var(--energy-bg); }
-    .energy .product-visual img { margin-left: 15%; }
+    .energy .product-visual img { display: block; margin: 0 auto; }
 
     /* Tin CSS art */
     .tin {
@@ -275,20 +275,20 @@
       align-items: center; justify-content: flex-end; padding-bottom: 22px;
       box-shadow: 0 24px 60px rgba(0,0,0,.5), inset 0 1px 0 rgba(255,255,255,.08);
     }
-    .sleep  .tin { background: linear-gradient(155deg, #5c1a30, #2a0c19); border: 1px solid rgba(212,82,110,.25); }
-    .circ   .tin { background: linear-gradient(155deg, #243f10, #101d07); border: 1px solid rgba(141,196,64,.25); }
+    .sleep  .tin { background: linear-gradient(155deg, #3a5228, #1a2c10); border: 1px solid rgba(141,196,64,.25); }
+    .circ   .tin { background: linear-gradient(155deg, #0d2a3d, #071523); border: 1px solid rgba(74,158,202,.25); }
     .energy .tin { background: linear-gradient(155deg, #1a2f5a, #090f22); border: 1px solid rgba(80,128,212,.25); }
     .tin-strips { position: absolute; top: 26px; display: flex; flex-direction: column; gap: 7px; }
     .tin-strip { width: 68px; height: 24px; border-radius: 100px; }
-    .sleep  .tin-strip { background: rgba(212,82,110,.45); border: 1px solid rgba(212,82,110,.6); }
-    .circ   .tin-strip { background: rgba(141,196,64,.45); border: 1px solid rgba(141,196,64,.6); }
+    .sleep  .tin-strip { background: rgba(141,196,64,.45); border: 1px solid rgba(141,196,64,.6); }
+    .circ   .tin-strip { background: rgba(74,158,202,.45); border: 1px solid rgba(74,158,202,.6); }
     .energy .tin-strip { background: rgba(80,128,212,.45); border: 1px solid rgba(80,128,212,.6); }
     .tin-logo {
       font-family: 'Nunito', sans-serif;
       font-weight: 900; font-size: 34px; letter-spacing: -1px; line-height: 1;
     }
-    .sleep  .tin-logo { color: #e2607c; }
-    .circ   .tin-logo { color: #8dc440; }
+    .sleep  .tin-logo { color: #8dc440; }
+    .circ   .tin-logo { color: #4a9eca; }
     .energy .tin-logo { color: #5080d4; }
 
     .variant-badge {
@@ -296,9 +296,9 @@
       font-size: 10px; font-weight: 700; letter-spacing: 2px;
       text-transform: uppercase; padding: 5px 12px; border-radius: 100px;
     }
-    .sleep  .variant-badge { background: rgba(212,82,110,.2); color: #e2607c; }
-    .circ   .variant-badge { background: rgba(141,196,64,.2); color: #8dc440; }
-    .energy .variant-badge { background: rgba(80,128,212,.2); color: #7aa6e8; }
+    .sleep  .variant-badge { background: rgba(141,196,64,.2); color: #8dc440; }
+    .circ   .variant-badge { background: rgba(74,158,202,.2); color: #4a9eca; }
+    .energy .variant-badge { background: #e8507a; color: #fff; }
 
     .product-info { padding: 30px; }
     .product-name {
@@ -326,9 +326,9 @@
       transition: transform .2s, box-shadow .2s;
       color: #fff; white-space: nowrap; flex-shrink: 0;
     }
-    .sleep  .btn-add { background: var(--sleep); }
+    .sleep  .btn-add { background: #8dc440; color: #1a2610; }
     .circ   .btn-add { background: var(--circ); color: var(--dark); }
-    .energy .btn-add { background: var(--energy); }
+    .energy .btn-add { background: #e8507a; }
     .btn-add:hover { transform: scale(1.06); }
 
     /* Bundle */
@@ -340,7 +340,7 @@
     .bundle-card::before {
       content: ''; position: absolute; top: -100px; right: 200px;
       width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(212,82,110,.1) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,80,122,.1) 0%, transparent 70%);
     }
     .bundle-tag {
       display: inline-block; background: var(--sleep); color: #fff;
@@ -362,13 +362,13 @@
     .bundle-card:hover .mini-tin:nth-child(1) { transform: rotate(-6deg) translateY(-4px); }
     .bundle-card:hover .mini-tin:nth-child(2) { transform: translateY(-8px); }
     .bundle-card:hover .mini-tin:nth-child(3) { transform: rotate(6deg) translateY(-4px); }
-    .mini-tin:nth-child(1) { margin-right: -14px; z-index: 3; background: linear-gradient(155deg,#5c1a30,#2a0c19); border: 1px solid rgba(212,82,110,.3); }
-    .mini-tin:nth-child(2) { margin-right: -14px; z-index: 2; background: linear-gradient(155deg,#243f10,#101d07); border: 1px solid rgba(141,196,64,.3); }
-    .mini-tin:nth-child(3) { z-index: 1; background: linear-gradient(155deg,#1a2f5a,#090f22); border: 1px solid rgba(80,128,212,.3); }
+    .mini-tin:nth-child(1) { margin-right: -14px; z-index: 3; background: linear-gradient(155deg,#3a5228,#1a2c10); border: 1px solid rgba(141,196,64,.3); }
+    .mini-tin:nth-child(2) { margin-right: -14px; z-index: 2; background: linear-gradient(155deg,#0d2a3d,#071523); border: 1px solid rgba(74,158,202,.3); }
+    .mini-tin:nth-child(3) { z-index: 1; background: #3d0a14; border: 1px solid rgba(232,80,122,.3); }
     .mini-logo { font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 20px; letter-spacing: -.5px; }
-    .mini-tin:nth-child(1) .mini-logo { color: #e2607c; }
-    .mini-tin:nth-child(2) .mini-logo { color: #8dc440; }
-    .mini-tin:nth-child(3) .mini-logo { color: #5080d4; }
+    .mini-tin:nth-child(1) .mini-logo { color: #8dc440; }
+    .mini-tin:nth-child(2) .mini-logo { color: #4a9eca; }
+    .mini-tin:nth-child(3) .mini-logo { color: #e8507a; }
     .bundle-right { display: flex; align-items: center; gap: 36px; flex-wrap: wrap; }
     .bundle-pricing { text-align: right; }
     .bundle-was { font-size: 14px; color: rgba(246,241,234,.35); text-decoration: line-through; margin-bottom: 4px; }
@@ -384,7 +384,7 @@
       font-family: 'DM Sans', sans-serif;
       transition: transform .2s, box-shadow .2s; white-space: nowrap;
     }
-    .btn-bundle:hover { transform: translateY(-3px); box-shadow: 0 16px 50px rgba(212,82,110,.45); }
+    .btn-bundle:hover { transform: translateY(-3px); box-shadow: 0 16px 50px rgba(232,80,122,.45); }
 
     /* ── B2B ── */
     .b2b { background: var(--maroon); text-align: center; }
@@ -489,7 +489,7 @@
       font-size: 16px; font-weight: 700; cursor: pointer;
       font-family: 'DM Sans', sans-serif; transition: transform .2s, box-shadow .2s;
     }
-    .modal-btn:hover { transform: scale(1.02); box-shadow: 0 10px 32px rgba(212,82,110,.4); }
+    .modal-btn:hover { transform: scale(1.02); box-shadow: 0 10px 32px rgba(232,80,122,.4); }
 
     /* ── TIN SVG ── */
     .tin-svg { width: 140px; height: 224px; display: block; }
@@ -564,12 +564,12 @@
     .commit-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
     .commit-badge {
       display: inline-flex; align-items: center; gap: 7px;
-      background: rgba(212,82,110,.08); border: 1px solid rgba(212,82,110,.18);
+      background: rgba(232,80,122,.08); border: 1px solid rgba(232,80,122,.18);
       color: var(--maroon); padding: 8px 15px; border-radius: 100px;
       font-size: 12px; font-weight: 600;
     }
     .commit-badge svg { width: 13px; height: 13px; stroke: var(--sleep); flex-shrink: 0; }
-    .supplier-block { background: rgba(212,82,110,.06); border-radius: 20px; padding: 28px 32px; }
+    .supplier-block { background: rgba(232,80,122,.06); border-radius: 20px; padding: 28px 32px; }
     .supplier-label {
       font-size: 10px; font-weight: 700; letter-spacing: 3px;
       text-transform: uppercase; color: rgba(45,15,27,.35); margin-bottom: 12px;
@@ -751,8 +751,8 @@
         <line x1="348" y1="695" x2="354" y2="668" stroke="rgba(246,241,234,0.09)" stroke-width="1.5"/>
 
         <!-- Wingtip navigation light (subtle pink accent) -->
-        <circle cx="128" cy="692" r="3.5" stroke="rgba(212,82,110,0.4)" stroke-width="1.5" fill="none"/>
-        <circle cx="128" cy="692" r="6" stroke="rgba(212,82,110,0.12)" stroke-width="1" fill="none"/>
+        <circle cx="128" cy="692" r="3.5" stroke="rgba(141,196,64,0.4)" stroke-width="1.5" fill="none"/>
+        <circle cx="128" cy="692" r="6" stroke="rgba(141,196,64,0.12)" stroke-width="1" fill="none"/>
 
       </g>
 
@@ -778,7 +778,7 @@
         Melt-in-your-mouth wellness for travel
       </div>
       <h1 class="hero-title">Flying should not<br>cost you your<br><em>well-being.</em></h1>
-      <p class="hero-sub">SOLV is the first dissolvable wellness strip designed specifically for air travel. Science-backed. No pills, no water. Just place it on your tongue and let it work.</p>
+      <p class="hero-sub">SOLV is the first dissolvable strip designed specifically for air travel. Simply place a strip on your tongue, let it dissolve, and feel the effects within seconds. With SOLV you'll land as the best version of yourself.</p>
       <div class="hero-actions">
         <a href="#shop" class="btn-primary">Shop Now — from €24.00</a>
         <a href="#how" class="btn-ghost">See how it works
@@ -795,8 +795,8 @@
           <img src="assets/sleep.png" alt="SOLV Sleep tin">
         </a>
 
-        <a href="#shop" class="hpc hpc-c" aria-label="Shop Circulation formula">
-          <img src="assets/circulation.png" alt="SOLV Circulation tin">
+        <a href="#shop" class="hpc hpc-c" aria-label="Shop Hydration formula">
+          <img src="assets/circulation.png" alt="SOLV Hydration tin">
         </a>
 
         <a href="#shop" class="hpc hpc-e" aria-label="Shop Energy formula">
@@ -835,7 +835,7 @@
   <section class="how" id="how">
     <span class="section-tag">The ritual</span>
     <h2 class="section-title">Simple by design.<br>Effective by science.</h2>
-    <p class="section-sub">No pills. No water. No effort. Our melt-in-your-mouth strips deliver what your body needs, right at your seat.</p>
+    <p class="section-sub">No pills. No water. Easy and TSA-friendly. Our dissolving mouth strips deliver what your body needs, right at your seat.</p>
     <div class="steps">
 
       <div class="step step-1">
@@ -849,7 +849,7 @@
           </svg>
         </div>
         <div class="step-title">Choose your formula</div>
-        <p class="step-desc">Sleep, Circulation, or Energy — pick what your body needs for this flight. Or bundle all three for the complete travel wellness kit.</p>
+        <p class="step-desc">Sleep, Hydration, or Energy - pick whatever your body needs for this flight. Or bundle all three for a complete travel wellness kit.</p>
       </div>
 
       <div class="step step-2">
@@ -861,7 +861,7 @@
           </svg>
         </div>
         <div class="step-title">Place on your tongue</div>
-        <p class="step-desc">One strip. It dissolves in seconds — no water, no pill-swallowing, no mess. Use it at your seat, in the lounge, or at the gate.</p>
+        <p class="step-desc">One circular strip that dissolves within seconds. No need for water or pill swallowing. Use it from your seat before take-off, in the lounge, or at the gate.</p>
       </div>
 
       <div class="step step-3">
@@ -873,7 +873,7 @@
           </svg>
         </div>
         <div class="step-title">Land feeling yourself</div>
-        <p class="step-desc">Arrive rested, energised, and ready — not jet-lagged, dehydrated, and drained. Flying should not cost you days of recovery.</p>
+        <p class="step-desc">Arrive rested, energized, and ready. Not jet-lagged, dehydrated or drained. Flying should not cost you days of recovery.</p>
       </div>
 
     </div>
@@ -914,25 +914,25 @@
         </div>
       </div>
 
-      <!-- CIRCULATION -->
-      <div class="product-card circ" id="circ">
-        <a href="circulation.html" class="product-visual" style="text-decoration:none;">
-          <div class="variant-badge">Circulation</div>
-          <img src="assets/circulation.png" alt="SOLV Circulation tin" style="border-radius: 24px;">
+      <!-- HYDRATION -->
+      <div class="product-card circ" id="hydration">
+        <a href="hydration.html" class="product-visual" style="text-decoration:none;">
+          <div class="variant-badge">Hydration</div>
+          <img src="assets/circulation.png" alt="SOLV Hydration tin" style="border-radius: 24px;">
         </a>
         <div class="product-info">
-          <div class="product-name">Flow Formula</div>
-          <p class="product-tagline">Keep the blood moving. Reduce swelling. Beat the bloat.</p>
+          <div class="product-name">Hydration Formula</div>
+          <p class="product-tagline">Beat dehydration before it beats you. Replenish electrolytes and feel human at 35,000 feet.</p>
           <div class="product-ingredients">
-            <span class="ing-tag">Ginkgo Biloba</span>
-            <span class="ing-tag">Vitamin E</span>
-            <span class="ing-tag">Ginger</span>
-            <span class="ing-tag">Horse Chestnut</span>
-            <span class="ing-tag">CoQ10</span>
+            <span class="ing-tag">Electrolytes</span>
+            <span class="ing-tag">Vitamin C</span>
+            <span class="ing-tag">B Vitamins</span>
+            <span class="ing-tag">Zinc</span>
+            <span class="ing-tag">Hyaluronic Acid</span>
           </div>
           <div class="product-buy">
             <div class="product-price">€24.00 <small>/ 15 strips</small></div>
-            <button class="btn-add" onclick="openModal('Circulation — Flow Formula')">Add to cart</button>
+            <button class="btn-add" onclick="openModal('Hydration — Hydration Formula')">Add to cart</button>
           </div>
         </div>
       </div>

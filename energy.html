@@ -11,9 +11,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --accent:  #5080d4;
-      --dark:    #1a2440;
-      --bg:      #0d1220;
+      --accent:  #e8507a;
+      --dark:    #3d0a14;
+      --bg:      #2d0d1a;
       --cream:   #f6f1ea;
       --beige:   #f5f0eb;
       --on-dark: rgba(246,241,234,.85);
@@ -28,7 +28,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 20px 60px;
-      background: rgba(13,18,32,.94);
+      background: rgba(61,10,20,.94);
       backdrop-filter: blur(14px);
       box-shadow: 0 1px 0 rgba(255,255,255,.06);
     }
@@ -69,7 +69,7 @@
     .hero-card {
       background: var(--beige);
       border-radius: 24px; padding: 40px; margin: 40px;
-      color: #0d1220; max-width: 460px; width: 100%;
+      color: #3d0a14; max-width: 460px; width: 100%;
     }
     .hero-badge {
       display: inline-block; background: var(--accent); color: #fff;
@@ -78,34 +78,34 @@
     }
     .hero-title {
       font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 30px; line-height: 1.2;
-      color: #0d1220; margin-bottom: 12px;
+      color: #3d0a14; margin-bottom: 12px;
     }
     .hero-sub {
-      font-size: 15px; line-height: 1.65; color: rgba(13,18,32,.6); margin-bottom: 24px;
+      font-size: 15px; line-height: 1.65; color: rgba(61,10,20,.6); margin-bottom: 24px;
     }
     .price-row {
       display: flex; align-items: baseline; gap: 8px; margin-bottom: 24px;
     }
     .price-main {
-      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 36px; color: #0d1220;
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 36px; color: #3d0a14;
     }
-    .price-sub { font-size: 14px; color: rgba(13,18,32,.5); }
+    .price-sub { font-size: 14px; color: rgba(61,10,20,.5); }
 
     .qty-row { display: flex; align-items: center; gap: 16px; margin-bottom: 18px; }
-    .qty-label { font-size: 13px; font-weight: 600; color: rgba(13,18,32,.6); }
+    .qty-label { font-size: 13px; font-weight: 600; color: rgba(61,10,20,.6); }
     .qty-ctrl {
       display: flex; align-items: center;
-      border: 1.5px solid rgba(13,18,32,.18); border-radius: 100px;
+      border: 1.5px solid rgba(61,10,20,.18); border-radius: 100px;
     }
     .qty-btn {
       background: none; border: none; cursor: pointer;
-      width: 36px; height: 36px; font-size: 18px; color: #0d1220;
+      width: 36px; height: 36px; font-size: 18px; color: #3d0a14;
       display: flex; align-items: center; justify-content: center; transition: background .15s;
     }
     .qty-btn:first-child { border-radius: 100px 0 0 100px; }
     .qty-btn:last-child  { border-radius: 0 100px 100px 0; }
-    .qty-btn:hover { background: rgba(13,18,32,.08); }
-    .qty-num { width: 36px; text-align: center; font-size: 15px; font-weight: 700; color: #0d1220; }
+    .qty-btn:hover { background: rgba(61,10,20,.08); }
+    .qty-num { width: 36px; text-align: center; font-size: 15px; font-weight: 700; color: #3d0a14; }
 
     .btn-atc {
       width: 100%; padding: 16px; background: var(--accent); color: #fff;
@@ -113,20 +113,20 @@
       font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 700;
       cursor: pointer; margin-bottom: 10px; transition: transform .2s, box-shadow .2s;
     }
-    .btn-atc:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(123,163,200,.4); }
+    .btn-atc:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(232,80,122,.4); }
 
     .btn-bundle {
       display: block; width: 100%; padding: 14px; text-align: center;
-      background: transparent; color: #0d1220;
-      border: 1.5px solid rgba(13,18,32,.2); border-radius: 100px;
+      background: transparent; color: #3d0a14;
+      border: 1.5px solid rgba(61,10,20,.2); border-radius: 100px;
       font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
       cursor: pointer; text-decoration: none; transition: border-color .2s, color .2s;
       margin-bottom: 24px;
     }
     .btn-bundle:hover { border-color: var(--accent); color: var(--accent); }
 
-    .perks { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(13,18,32,.1); padding-top: 20px; }
-    .perk { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(13,18,32,.65); font-weight: 500; }
+    .perks { display: flex; flex-direction: column; gap: 10px; border-top: 1px solid rgba(61,10,20,.1); padding-top: 20px; }
+    .perk { display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(61,10,20,.65); font-weight: 500; }
     .perk svg { flex-shrink: 0; }
 
     /* ── STATS BAR ── */
@@ -166,7 +166,7 @@
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
     }
     .step-title { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 20px; color: var(--dark); }
-    .step-desc { font-size: 15px; line-height: 1.65; color: rgba(13,18,32,.6); }
+    .step-desc { font-size: 15px; line-height: 1.65; color: rgba(61,10,20,.6); }
 
     /* ── INGREDIENTS ── */
     .ingredients { background: var(--bg); padding: 100px 60px; }
@@ -222,7 +222,7 @@
 
     /* ── FOOTER ── */
     footer {
-      background: #07090f; padding: 36px 60px; text-align: center;
+      background: #1a060f; padding: 36px 60px; text-align: center;
       font-size: 13px; color: rgba(246,241,234,.3);
     }
     footer a { color: rgba(246,241,234,.5); text-decoration: none; }
@@ -247,20 +247,20 @@
     .modal-close {
       position: absolute; top: 16px; right: 20px;
       background: none; border: none; font-size: 24px; cursor: pointer;
-      color: rgba(13,18,32,.3); line-height: 1; transition: color .2s;
+      color: rgba(61,10,20,.3); line-height: 1; transition: color .2s;
     }
-    .modal-close:hover { color: rgba(13,18,32,.75); }
+    .modal-close:hover { color: rgba(61,10,20,.75); }
     .modal-title {
       font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 24px;
-      color: #0d1220; margin-bottom: 10px; letter-spacing: -.5px;
+      color: #3d0a14; margin-bottom: 10px; letter-spacing: -.5px;
     }
-    .modal-sub { font-size: 14px; color: rgba(13,18,32,.6); line-height: 1.6; margin-bottom: 24px; }
+    .modal-sub { font-size: 14px; color: rgba(61,10,20,.6); line-height: 1.6; margin-bottom: 24px; }
     .modal-input {
       width: 100%; padding: 14px 20px; border-radius: 100px;
-      border: 1.5px solid rgba(13,18,32,.12);
+      border: 1.5px solid rgba(61,10,20,.12);
       font-size: 14px; font-family: 'DM Sans', sans-serif;
       outline: none; margin-bottom: 10px;
-      background: #fff; color: #0d1220; transition: border-color .2s;
+      background: #fff; color: #3d0a14; transition: border-color .2s;
     }
     .modal-input:focus { border-color: var(--accent); }
     .modal-btn {
@@ -474,21 +474,21 @@
       <h2 class="section-title">You may also like.</h2>
       <div class="also-grid">
         <a href="sleep.html" class="also-card">
-          <div class="also-img" style="background: #3d0a14;">
+          <div class="also-img" style="background: #2d3d1a;">
             <img src="assets/sleep.png" alt="SOLV Sleep tin">
           </div>
-          <div class="also-info" style="background: #2a0810;">
+          <div class="also-info" style="background: #1a2610;">
             <div class="also-name">Sleep</div>
             <p class="also-sub">Fall asleep faster. Wake up refreshed.</p>
           </div>
         </a>
-        <a href="circulation.html" class="also-card">
-          <div class="also-img" style="background: #3d4a1e;">
-            <img src="assets/circulation.png" alt="SOLV Circulation tin">
+        <a href="hydration.html" class="also-card">
+          <div class="also-img" style="background: #0d2a3d;">
+            <img src="assets/circulation.png" alt="SOLV Hydration tin">
           </div>
-          <div class="also-info" style="background: #2a3314;">
-            <div class="also-name">Circulation</div>
-            <p class="also-sub">Keep the blood moving. Beat the bloat.</p>
+          <div class="also-info" style="background: #071e2a;">
+            <div class="also-name">Hydration</div>
+            <p class="also-sub">Beat dehydration before it beats you.</p>
           </div>
         </a>
       </div>
