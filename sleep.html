@@ -55,10 +55,10 @@
     .hero-left {
       background: var(--dark);
       display: flex; align-items: center; justify-content: center;
-      padding: 120px 60px 80px;
+      padding: 80px 40px;
     }
     .hero-left img {
-      max-width: 320px; max-height: 480px; width: 100%; object-fit: contain;
+      width: 90%; height: 90vh; max-height: 90vh; object-fit: contain;
     }
 
     .hero-right {
@@ -95,13 +95,15 @@
     .qty-label { font-size: 13px; font-weight: 600; color: rgba(45,15,27,.6); }
     .qty-ctrl {
       display: flex; align-items: center;
-      border: 1.5px solid rgba(45,15,27,.18); border-radius: 100px; overflow: hidden;
+      border: 1.5px solid rgba(45,15,27,.18); border-radius: 100px;
     }
     .qty-btn {
       background: none; border: none; cursor: pointer;
       width: 36px; height: 36px; font-size: 18px; color: #2d0f1b;
       display: flex; align-items: center; justify-content: center; transition: background .15s;
     }
+    .qty-btn:first-child { border-radius: 100px 0 0 100px; }
+    .qty-btn:last-child  { border-radius: 0 100px 100px 0; }
     .qty-btn:hover { background: rgba(45,15,27,.08); }
     .qty-num { width: 36px; text-align: center; font-size: 15px; font-weight: 700; color: #2d0f1b; }
 
@@ -226,6 +228,70 @@
     footer a { color: rgba(246,241,234,.5); text-decoration: none; }
     footer a:hover { color: var(--accent); }
 
+    /* ── MODAL ── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,.72); backdrop-filter: blur(8px);
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal {
+      background: var(--beige); border-radius: 28px; padding: 44px 40px;
+      max-width: 400px; width: 100%; text-align: center; position: relative;
+      animation: modalIn .28s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(.94) translateY(16px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-close {
+      position: absolute; top: 16px; right: 20px;
+      background: none; border: none; font-size: 24px; cursor: pointer;
+      color: rgba(45,15,27,.3); line-height: 1; transition: color .2s;
+    }
+    .modal-close:hover { color: rgba(45,15,27,.75); }
+    .modal-title {
+      font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 24px;
+      color: #2d0f1b; margin-bottom: 10px; letter-spacing: -.5px;
+    }
+    .modal-sub { font-size: 14px; color: rgba(45,15,27,.6); line-height: 1.6; margin-bottom: 24px; }
+    .modal-input {
+      width: 100%; padding: 14px 20px; border-radius: 100px;
+      border: 1.5px solid rgba(45,15,27,.12);
+      font-size: 14px; font-family: 'DM Sans', sans-serif;
+      outline: none; margin-bottom: 10px;
+      background: #fff; color: #2d0f1b; transition: border-color .2s;
+    }
+    .modal-input:focus { border-color: var(--accent); }
+    .modal-btn {
+      width: 100%; background: var(--accent); color: #fff;
+      padding: 15px; border-radius: 100px; border: none;
+      font-size: 15px; font-weight: 700; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; transition: transform .2s, box-shadow .2s;
+    }
+    .modal-btn:hover { transform: scale(1.02); }
+
+    /* ── FOCUS & MOTION ── */
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .btn-atc:focus-visible,
+    .btn-bundle:focus-visible,
+    .qty-btn:focus-visible,
+    .modal-btn:focus-visible,
+    .modal-close:focus-visible { border-radius: 100px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       nav { padding: 18px 24px; }
@@ -261,7 +327,7 @@
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <img src="assets/sleep.png" alt="SOLV Sleep tin">
+      <img src="assets/sleep-hero.png" alt="SOLV Sleep tin">
     </div>
     <div class="hero-right">
       <div class="hero-card">
@@ -280,7 +346,7 @@
             <button class="qty-btn" onclick="changeQty(1)" aria-label="Increase">+</button>
           </div>
         </div>
-        <button class="btn-atc" onclick="alert('Launching soon — drop your email on the home page!')">Add to cart</button>
+        <button class="btn-atc" onclick="openProductModal()">Add to cart</button>
         <a href="index.html#shop" class="btn-bundle">Get the bundle — save €12</a>
         <div class="perks">
           <div class="perk">
@@ -434,12 +500,58 @@
     <p>© 2025 SOLV Wellness. <a href="index.html">Back to home</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
   </footer>
 
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="overlayClick(event)" role="dialog" aria-modal="true" aria-labelledby="productModalTitle">
+    <div class="modal" id="modal">
+      <button class="modal-close" onclick="closeProductModal()" aria-label="Close">&times;</button>
+      <div class="modal-title" id="productModalTitle">You're early.</div>
+      <p class="modal-sub" id="productModalSub">SOLV Sleep is launching soon. Drop your email and we'll notify you the moment orders open — plus <strong>15% off</strong> your first order.</p>
+      <input type="email" class="modal-input" id="productModalEmail" placeholder="your@email.com" aria-label="Email address">
+      <button class="modal-btn" id="productModalBtn" onclick="submitProductEmail()">Notify me at launch</button>
+    </div>
+  </div>
+
   <script>
     let qty = 1;
     function changeQty(d) {
       qty = Math.max(1, qty + d);
       document.getElementById('qty').textContent = qty;
     }
+
+    function openProductModal() {
+      document.getElementById('productModalEmail').value = '';
+      document.getElementById('productModalEmail').style.display = 'block';
+      document.getElementById('productModalBtn').textContent = 'Notify me at launch';
+      document.getElementById('productModalBtn').onclick = submitProductEmail;
+      document.getElementById('productModalTitle').textContent = 'You’re early.';
+      document.getElementById('productModalSub').innerHTML = 'SOLV Sleep is launching soon. Drop your email and we’ll notify you the moment orders open — plus <strong>15% off</strong> your first order.';
+      document.getElementById('modalOverlay').classList.add('open');
+      setTimeout(() => document.getElementById('productModalEmail').focus(), 200);
+    }
+
+    function closeProductModal() {
+      document.getElementById('modalOverlay').classList.remove('open');
+    }
+
+    function overlayClick(e) {
+      if (e.target === document.getElementById('modalOverlay')) closeProductModal();
+    }
+
+    function submitProductEmail() {
+      const email = document.getElementById('productModalEmail').value.trim();
+      if (!email || !email.includes('@')) {
+        document.getElementById('productModalEmail').style.borderColor = 'var(--accent)';
+        document.getElementById('productModalEmail').focus();
+        return;
+      }
+      document.getElementById('productModalTitle').textContent = 'You’re on the list.';
+      document.getElementById('productModalSub').textContent = 'We’ll email you at ' + email + ' the moment SOLV launches. Watch your inbox.';
+      document.getElementById('productModalEmail').style.display = 'none';
+      document.getElementById('productModalBtn').textContent = 'Close';
+      document.getElementById('productModalBtn').onclick = closeProductModal;
+    }
+
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProductModal(); });
   </script>
 </body>
 </html>

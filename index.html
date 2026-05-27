@@ -569,7 +569,7 @@
       font-size: 12px; font-weight: 600;
     }
     .commit-badge svg { width: 13px; height: 13px; stroke: var(--sleep); flex-shrink: 0; }
-    .supplier-block { border-left: 3px solid rgba(212,82,110,.2); padding-left: 32px; }
+    .supplier-block { background: rgba(212,82,110,.06); border-radius: 20px; padding: 28px 32px; }
     .supplier-label {
       font-size: 10px; font-weight: 700; letter-spacing: 3px;
       text-transform: uppercase; color: rgba(45,15,27,.35); margin-bottom: 12px;
@@ -586,7 +586,7 @@
       .nav-links { gap: 18px; }
       .hero { grid-template-columns: 1fr; padding: 110px 24px 70px; text-align: center; }
       .hero-sub { margin-left: auto; margin-right: auto; }
-      .hero-actions { justify-content: flex-end; }
+      .hero-actions { justify-content: center; }
       .hero-right { order: -1; margin-top: 20px; }
       .stats { padding: 24px; }
       .stat-divider { display: none; }
@@ -607,6 +607,30 @@
       .values-grid { grid-template-columns: 1fr; }
       .commit-block { grid-template-columns: 1fr; padding: 36px 28px; gap: 40px; }
     }
+    /* ── FOCUS & MOTION ── */
+    :focus-visible {
+      outline: 2px solid var(--sleep);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .btn-primary:focus-visible,
+    .btn-ghost:focus-visible,
+    .nav-cta:focus-visible,
+    .btn-add:focus-visible,
+    .btn-bundle:focus-visible,
+    .btn-contact:focus-visible,
+    .modal-btn:focus-visible,
+    .modal-close:focus-visible { border-radius: 100px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+
     @media (max-width: 600px) {
       .nav-links a:not(.nav-cta) { display: none; }
       .hero-title { font-size: 38px; }
@@ -1139,7 +1163,7 @@
   </footer>
 
   <!-- MODAL -->
-  <div class="modal-overlay" id="modalOverlay" onclick="overlayClick(event)">
+  <div class="modal-overlay" id="modalOverlay" onclick="overlayClick(event)" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="modal" id="modal">
       <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
       <div class="modal-icon">
@@ -1212,9 +1236,10 @@
       const rect = statsEl.getBoundingClientRect();
       if (rect.top < window.innerHeight - 80) {
         animated = true;
+        const noMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         statNums.forEach((el, i) => {
           const target = targets[i];
-          if (target === 0) { el.textContent = '0'; return; }
+          if (target === 0 || noMotion) { el.textContent = target + suffixes[i]; return; }
           let cur = 0;
           const step = target / 40;
           const iv = setInterval(() => {
