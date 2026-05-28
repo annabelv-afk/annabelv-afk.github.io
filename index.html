@@ -537,6 +537,9 @@
     }
     .bubble-wrap { line-height: 0; overflow: visible; }
     .bubble-wrap svg { display: block; width: 100%; height: 160px; }
+    .bubble-top { position: relative; z-index: 2; }
+    .bubble-bottom { position: relative; z-index: 2; }
+    .bubble-section { position: relative; z-index: 1; }
     .about-scroll { background: #e8507a; padding: 32px 0; overflow: hidden; }
     .scroll-row { display: flex; overflow: hidden; margin-bottom: 14px; }
     .scroll-row:last-child { margin-bottom: 0; }
@@ -1128,7 +1131,7 @@
     </div>
 
     <!-- 2. Bubble transition: beige → pink -->
-    <div class="bubble-wrap" style="background:#f5f0eb">
+    <div class="bubble-wrap bubble-top" style="background:#e8507a">
       <svg viewBox="0 0 1440 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="bgTop" cx="0.35" cy="0.35" r="0.65" gradientUnits="objectBoundingBox">
@@ -1243,7 +1246,7 @@
     </div>
 
     <!-- 3. Pink scrolling images -->
-    <div class="about-scroll">
+    <div class="about-scroll bubble-section">
       <div class="scroll-row">
         <div class="scroll-track scroll-left">
           <img src="assets/lifestyle-1.jpg" alt="" loading="lazy">
@@ -1271,7 +1274,7 @@
     </div>
 
     <!-- 4. Bubble transition: pink → beige -->
-    <div class="bubble-wrap" style="background:#e8507a">
+    <div class="bubble-wrap bubble-bottom" style="background:#e8507a">
       <svg viewBox="0 0 1440 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <radialGradient id="bgBot" cx="0.35" cy="0.35" r="0.65" gradientUnits="objectBoundingBox">
