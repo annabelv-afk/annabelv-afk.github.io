@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOLV — FAQ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,900&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --pink:   #e8507a;
+      --dark:   #2d0d1a;
+      --cream:  #f6f1ea;
+      --muted:  rgba(45,13,26,.45);
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid rgba(45,13,26,.08);
+      padding: 20px 60px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .nav-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 14px; color: var(--muted); text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--pink); }
+    .nav-logo {
+      font-family: 'Fredoka One', cursive;
+      font-size: 22px; color: var(--dark);
+      text-decoration: none; letter-spacing: -.5px;
+    }
+
+    /* ── HERO ── */
+    .faq-hero {
+      padding: 80px 60px 56px;
+      max-width: 760px;
+    }
+    .faq-eyebrow {
+      font-family: 'Fredoka One', cursive;
+      font-size: 13px; color: var(--pink);
+      text-transform: uppercase; letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+    .faq-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(40px, 6vw, 64px);
+      line-height: 1.05; color: var(--dark);
+      margin-bottom: 18px;
+    }
+    .faq-subtitle {
+      font-size: 17px; color: var(--muted);
+      line-height: 1.65; max-width: 520px;
+    }
+
+    /* ── FAQ SECTIONS ── */
+    .faq-body {
+      padding: 0 60px 100px;
+      max-width: 760px;
+    }
+    .faq-section { margin-bottom: 56px; }
+    .faq-section-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 18px; color: var(--pink);
+      text-transform: uppercase; letter-spacing: 1px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(232,80,122,.18);
+    }
+
+    /* ── ACCORDION ── */
+    .faq-item {
+      border-bottom: 1px solid rgba(45,13,26,.09);
+    }
+    .faq-q {
+      width: 100%; background: none; border: none;
+      padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      text-align: left;
+    }
+    .faq-q-text {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800; font-size: 16px;
+      color: var(--dark); line-height: 1.4;
+      transition: color .2s;
+    }
+    .faq-item.open .faq-q-text { color: var(--pink); }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(232,80,122,.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; transition: background .2s, transform .3s;
+      color: var(--pink);
+    }
+    .faq-item.open .faq-icon {
+      background: var(--pink); color: #fff; transform: rotate(45deg);
+    }
+    .faq-a {
+      max-height: 0; overflow: hidden;
+      transition: max-height .35s ease, padding .35s ease;
+      padding: 0;
+    }
+    .faq-item.open .faq-a {
+      max-height: 600px;
+      padding-bottom: 20px;
+    }
+    .faq-a p {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .faq-a p:last-child { margin-bottom: 0; }
+    .faq-a a { color: var(--pink); text-decoration: none; }
+    .faq-a a:hover { text-decoration: underline; }
+
+    /* ── STILL HAVE QUESTIONS ── */
+    .faq-contact {
+      margin: 0 60px 100px;
+      max-width: 700px;
+      background: #2d0d1a;
+      border-radius: 24px;
+      padding: 48px 48px;
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 32px; flex-wrap: wrap;
+    }
+    .faq-contact-left h2 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 28px; color: var(--cream);
+      margin-bottom: 8px;
+    }
+    .faq-contact-left p {
+      font-size: 14px; color: rgba(246,241,234,.5);
+    }
+    .faq-contact-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--pink); color: #fff;
+      padding: 14px 28px; border-radius: 50px;
+      font-family: 'Nunito', sans-serif; font-weight: 800;
+      font-size: 15px; text-decoration: none;
+      transition: background .2s, transform .2s;
+      white-space: nowrap;
+    }
+    .faq-contact-btn:hover { background: #d43d67; transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    .site-footer { background: #2d0d1a; padding: 64px 60px 0; font-family: 'DM Sans', sans-serif; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 2fr; gap: 48px; padding-bottom: 48px; }
+    .footer-brand-logo { font-family: 'Fredoka One', cursive; font-size: 28px; color: #e8507a; margin-bottom: 10px; }
+    .footer-brand-tag { font-size: 13px; color: rgba(246,241,234,.4); margin-bottom: 24px; line-height: 1.5; }
+    .footer-email-form {
+      display: flex; background: rgba(246,241,234,.08);
+      border-radius: 50px; overflow: hidden; margin-bottom: 20px;
+      border: 1px solid rgba(246,241,234,.12);
+    }
+    .footer-email-input {
+      flex: 1; background: transparent; border: none; padding: 10px 18px;
+      font-size: 13px; color: #f6f1ea; font-family: 'DM Sans', sans-serif; outline: none;
+    }
+    .footer-email-input::placeholder { color: rgba(246,241,234,.35); }
+    .footer-email-btn {
+      background: #e8507a; border: none; width: 38px; height: 38px;
+      border-radius: 50px; margin: 3px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background .2s; flex-shrink: 0;
+    }
+    .footer-email-btn:hover { background: #d43d67; }
+    .footer-socials { display: flex; gap: 12px; margin-top: 4px; }
+    .footer-social-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(246,241,234,.1); border: 1px solid rgba(246,241,234,.15);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(246,241,234,.6); text-decoration: none; transition: background .2s, color .2s;
+    }
+    .footer-social-btn:hover { background: rgba(246,241,234,.18); color: #f6f1ea; }
+    .footer-col-title {
+      font-family: 'Fredoka One', cursive; font-size: 14px; color: #f6f1ea;
+      letter-spacing: .5px; text-transform: uppercase; margin-bottom: 16px;
+    }
+    .footer-col a { display: block; color: rgba(246,241,234,.5); text-decoration: none; font-size: 13px; line-height: 2; transition: color .2s; }
+    .footer-col a:hover { color: #e8507a; }
+    .footer-col-email { font-size: 13px; color: rgba(246,241,234,.5); margin-top: 4px; }
+    .footer-disclaimer { font-size: 11px; color: rgba(246,241,234,.25); line-height: 1.6; }
+    .footer-bottom {
+      border-top: 1px solid rgba(246,241,234,.08); padding: 20px 0;
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+    }
+    .footer-copy { font-size: 12px; color: rgba(246,241,234,.3); }
+    .footer-legal-links { display: flex; gap: 20px; }
+    .footer-legal-links a { font-size: 12px; color: rgba(246,241,234,.3); text-decoration: none; transition: color .2s; }
+    .footer-legal-links a:hover { color: rgba(246,241,234,.6); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 18px 24px; }
+      .faq-hero { padding: 56px 24px 40px; }
+      .faq-body { padding: 0 24px 80px; }
+      .faq-contact { margin: 0 24px 80px; padding: 36px 28px; flex-direction: column; }
+      .site-footer { padding: 48px 24px 0; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal-links { flex-wrap: wrap; justify-content: center; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+      Back
+    </a>
+    <a class="nav-logo" href="index.html">solv</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="faq-hero">
+    <div class="faq-eyebrow">Help Center</div>
+    <h1 class="faq-title">Frequently asked questions</h1>
+    <p class="faq-subtitle">Everything you need to know about SOLV wellness strips — from what's inside to how to use them at 35,000 feet.</p>
+  </div>
+
+  <!-- FAQ BODY -->
+  <div class="faq-body">
+
+    <!-- Product -->
+    <div class="faq-section">
+      <div class="faq-section-title">The product</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">What is a SOLV strip?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>A SOLV strip is a thin, dissolvable oral film that you place on your tongue. It melts in seconds — no water, no pills, no mess. Each formula is precisely dosed and designed specifically for the conditions your body faces during air travel.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">How do I use a SOLV strip?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Tear open the pouch, place the strip on your tongue, and let it dissolve — it takes about 10–15 seconds. You don't need water or any other liquid. The strip can be used any time before, during, or after your flight.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">What do the three formulas do?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p><strong>Energy</strong> (Strawberry Mint) — combines Green Coffee Bean Extract, L-Theanine, and Vitamin B12 for a smooth, focused lift without the crash. Ideal for early-morning departures and same-day meetings.</p>
+          <p><strong>Sleep</strong> (Cranberry) — a blend of Valerian, Melatonin, Lavender, Chamomile, and Hibiscus formulated to ease your body into sleep on long-haul flights.</p>
+          <p><strong>Hydration</strong> (Lemon Peppermint) — Vitamin D, Collagen, Vitamin C, and Zinc support skin, immune function, and cellular hydration to counter the dry cabin air.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Are SOLV strips safe to take together?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>The Energy and Hydration strips pair well together and are designed to be used on the same journey. We recommend avoiding the Sleep strip simultaneously with Energy as they work in opposite directions. If you have any health conditions or take medications, consult your healthcare provider before use.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ingredients -->
+    <div class="faq-section">
+      <div class="faq-section-title">Ingredients &amp; safety</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">What are the strips made of?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>The strips use a plant-based film base (pullulan) to deliver active ingredients. They are free from gluten, artificial colors, and high-fructose corn syrup. Full ingredient lists are available on each product page.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Are SOLV strips vegan and gluten-free?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Yes — all three SOLV formulas are vegan and gluten-free. The Hydration strip contains Collagen; if you are vegan and prefer to avoid it, the Energy and Sleep strips do not contain any animal-derived ingredients.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Has SOLV been evaluated by the FDA?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>SOLV strips are dietary supplements. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. All formulas are manufactured in GMP-certified facilities.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Travel & TSA -->
+    <div class="faq-section">
+      <div class="faq-section-title">Travel &amp; TSA</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Can I take SOLV strips through airport security?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>Yes. SOLV strips are dry, solid items — they are not subject to TSA liquid restrictions. You can keep them in any pocket, bag, or carry-on without needing to place them in your liquids bag.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Do strips need to be refrigerated?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>No. Store strips at room temperature away from direct moisture and heat. They are shelf-stable and designed to travel well — from the carry-on bin to the overhead compartment.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Orders & Shipping -->
+    <div class="faq-section">
+      <div class="faq-section-title">Orders &amp; shipping</div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">When will SOLV be available to order?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>SOLV is currently in its pre-launch phase. Sign up with your email on any product page to be notified the moment orders open — early subscribers receive 15% off their first order.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Where does SOLV ship?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>At launch we will only ship to the EU, UK, Switzerland and Andorra. Global shipping to additional markets will follow shortly. Sign up to stay informed.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+          <span class="faq-q-text">Can I buy SOLV in airports or hotels?</span>
+          <span class="faq-icon" aria-hidden="true">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="6" y1="1" x2="6" y2="11"/><line x1="1" y1="6" x2="11" y2="6"/></svg>
+          </span>
+        </button>
+        <div class="faq-a" role="region">
+          <p>B2B partnerships with travel retail, airline lounges, and hotel groups are a core part of our roadmap. If you represent a travel brand interested in carrying SOLV, <a href="index.html#b2b">reach out here</a>.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- CONTACT CARD -->
+  <div class="faq-contact">
+    <div class="faq-contact-left">
+      <h2>Still have questions?</h2>
+      <p>Our team is here to help. Reach out anytime.</p>
+    </div>
+    <a href="mailto:hello@solvwellness.com" class="faq-contact-btn">
+      Email us
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="7" x2="13" y2="7"/><polyline points="7 1 13 7 7 13"/></svg>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand-logo">solv</div>
+        <div class="footer-brand-tag">Flying should not cost you your well-being.</div>
+        <form class="footer-email-form" onsubmit="return false;">
+          <input class="footer-email-input" type="email" placeholder="Your email address">
+          <button class="footer-email-btn" type="submit" aria-label="Subscribe">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="1" y1="7" x2="13" y2="7"/><polyline points="7 1 13 7 7 13"/></svg>
+          </button>
+        </form>
+        <div class="footer-socials">
+          <a class="footer-social-btn" href="#" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="footer-social-btn" href="#" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.29 6.29 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.78a4.85 4.85 0 01-1.01-.09z"/></svg>
+          </a>
+          <a class="footer-social-btn" href="#" aria-label="Twitter / X">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L2.093 2.25H8.51l4.265 5.632 5.47-5.632z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Learn</div>
+        <a href="index.html#how">How It Works</a>
+        <a href="index.html#about">Ingredients</a>
+        <a href="journal.html">Journal</a>
+        <a href="index.html#about">About Us</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Help</div>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#b2b">Contact Us</a>
+        <div class="footer-col-email">hello@solvwellness.com</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Notice</div>
+        <div class="footer-disclaimer">These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Always consult a healthcare professional before use, especially if pregnant, nursing, or taking medications.</div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2025 SOLV. All rights reserved.</div>
+      <div class="footer-legal-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    }
+  </script>
+</body>
+</html>
