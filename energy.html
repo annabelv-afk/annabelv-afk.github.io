@@ -603,8 +603,8 @@
       document.getElementById('productModalEmail').style.display = 'block';
       document.getElementById('productModalBtn').textContent = 'Notify me at launch';
       document.getElementById('productModalBtn').onclick = submitProductEmail;
-      document.getElementById('productModalTitle').textContent = 'You're early.';
-      document.getElementById('productModalSub').innerHTML = 'SOLV Energy is launching soon. Drop your email and we'll notify you the moment orders open — plus <strong>15% off</strong> your first order.';
+      document.getElementById('productModalTitle').textContent = 'You’re early.';
+      document.getElementById('productModalSub').innerHTML = 'SOLV Energy is launching soon. Drop your email and we’ll notify you the moment orders open — plus <strong>15% off</strong> your first order.';
       document.getElementById('modalOverlay').classList.add('open');
       setTimeout(() => document.getElementById('productModalEmail').focus(), 200);
     }
@@ -624,14 +624,15 @@
         document.getElementById('productModalEmail').focus();
         return;
       }
-      document.getElementById('productModalTitle').textContent = 'You're on the list.';
-      document.getElementById('productModalSub').textContent = 'We'll email you at ' + email + ' the moment SOLV launches. Watch your inbox.';
+      document.getElementById('productModalTitle').textContent = 'You’re early.';
+      document.getElementById('productModalSub').textContent = 'We’ll email you at ' + email + ' the moment SOLV launches. Watch your inbox.';
       document.getElementById('productModalEmail').style.display = 'none';
       document.getElementById('productModalBtn').textContent = 'Close';
       document.getElementById('productModalBtn').onclick = closeProductModal;
     }
 
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeProductModal(); });
+ 
   </script>
 </body>
 </html>
